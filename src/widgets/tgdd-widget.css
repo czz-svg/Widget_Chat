@@ -1,0 +1,66 @@
+:root{
+  --card-bg:#fff; --text:#222; --muted:#666; --line:#eee; --brand:#2f80ed; --danger:#e53935; --gold:#f59e0b;
+}
+
+/* Wrapper */
+.tgdd-wrap{ max-width:1100px; margin:24px auto; padding:0 12px; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial; color:var(--text); }
+.tgdd-header h2{ margin:0 0 4px; font-size:22px; }
+.tgdd-sub{ color:var(--muted); font-size:13px; margin-bottom:14px; }
+
+/* Grid */
+.tgdd-grid{ display:grid; grid-template-columns:repeat(5,1fr); gap:12px; }
+@media (max-width:1024px){ .tgdd-grid{ grid-template-columns:repeat(4,1fr); } }
+@media (max-width:768px){ .tgdd-grid{ grid-template-columns:repeat(2,1fr); } }
+
+/* Card */
+.tgdd-card{ position:relative; background:var(--card-bg); border:1px solid var(--line); border-radius:12px; padding:10px; display:flex; flex-direction:column; gap:8px; transition:transform .15s ease, box-shadow .15s ease; }
+.tgdd-card:hover{ transform:translateY(-2px); box-shadow:0 6px 20px rgba(0,0,0,.08); }
+.tgdd-card.is-compared{ outline:2px solid var(--brand); }
+
+/* Thumb */
+.tgdd-thumb{ aspect-ratio:1/1; display:grid; place-items:center; overflow:hidden; border-radius:10px; background:#fafafa; }
+.tgdd-thumb img{ width:100%; height:100%; object-fit:contain; }
+
+/* Title */
+.tgdd-title{ font-size:14px; line-height:1.35; height:38px; overflow:hidden; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; margin:2px 0; }
+
+/* Rating */
+.tgdd-rating{ display:flex; align-items:center; gap:6px; font-size:12px; color:var(--muted); }
+.tgdd-stars{ display:inline-flex; gap:2px; }
+.star{ fill:var(--gold); }
+.star .bg{ fill:#ddd; }
+.tgdd-reviews{ font-size:12px; }
+
+/* Price */
+.tgdd-price{ display:flex; align-items:baseline; gap:6px; }
+.tgdd-price-now{ font-size:16px; }
+.tgdd-price-old{ color:var(--muted); text-decoration:line-through; font-size:12px; }
+
+/* Promos */
+.tgdd-promos{ list-style:none; padding:0; margin:0; display:grid; gap:4px; }
+.tgdd-promos li{ font-size:12px; color:#333; background:#f6f9ff; border:1px dashed #d8e6ff; padding:6px 8px; border-radius:8px; }
+
+/* Actions */
+.tgdd-actions{ display:flex; align-items:center; justify-content:space-between; gap:8px; margin-top:4px; }
+.tgdd-compare{ font-size:13px; color:#333; display:flex; align-items:center; gap:6px; }
+.tgdd-buy{ border:none; background:var(--brand); color:#fff; border-radius:10px; padding:8px 12px; font-weight:600; cursor:pointer; }
+.tgdd-buy:hover{ filter:brightness(.95); }
+
+/* Badges */
+.tgdd-badge{ position:absolute; top:10px; left:10px; background:#0f9d58; color:#fff; font-size:11px; padding:4px 6px; border-radius:6px; font-weight:600; }
+.tgdd-discount{ position:absolute; top:10px; right:10px; background:#ffe8e7; color:var(--danger); border:1px solid #ffd0ce; font-size:11px; padding:4px 6px; border-radius:6px; font-weight:700; }
+
+/* Like button */
+.tgdd-like{ position:absolute; bottom:10px; right:10px; width:34px; height:34px; border-radius:50%; border:1px solid var(--line); background:#fff; display:grid; place-items:center; cursor:pointer; color:#999; }
+.tgdd-like.is-liked{ color:#e91e63; border-color:#ffb2c9; background:#fff0f5; }
+.tgdd-like:hover{ filter:brightness(.97); }
+
+/* Compare bar */
+.tgdd-compare-bar{ position:sticky; bottom:10px; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px; background:#fff; border:1px solid var(--line); border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,.06); margin-top:14px; }
+.tgdd-compare-list{ display:flex; gap:10px; overflow:auto; }
+.tgdd-compare-item{ display:flex; align-items:center; gap:10px; border:1px solid var(--line); padding:6px 8px; border-radius:10px; }
+.tgdd-compare-item img{ width:40px; height:40px; object-fit:contain; }
+.tgdd-compare-item .name{ max-width:180px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font-size:13px; }
+.tgdd-compare-item .price{ font-weight:700; }
+.tgdd-ghost{ background:#fff; border:1px solid var(--line); padding:8px 12px; border-radius:10px; cursor:pointer; }
+.tgdd-primary{ background:var(--brand); color:#fff; border:none; padding:8px 12px; border-radius:10px; cursor:pointer; font-weight:700; }
